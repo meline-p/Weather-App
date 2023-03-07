@@ -1,0 +1,213 @@
+:root{
+    --color-purple: #7A3E65;
+    --color-red: #A84448;
+    --color-orange: #E9A178;
+    --color-crema : #F6E1C3;
+}
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, var(--color-purple), var(--color-red), var(--color-orange));
+    padding: 100px 0px 20px;
+}
+
+.container{
+    max-width: 375px;
+    background: #f1f1f1f1;
+    color: #333;
+    padding-top: 20px;
+    box-shadow: 0 4px 7px rgba(0,0,0,0.375);
+    border-radius: 30px;
+    margin: 0 auto;
+    background-image: linear-gradient(45deg, var(--color-crema), var(--color-orange)) ;
+    position: relative;
+}
+
+h1{
+    font-family: Raleway, sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-crema);
+}
+
+/* MAIN */
+.weather-information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+    margin-bottom: 40px ;
+}
+
+/* Icon et description */
+.weather-description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.weather-logo{
+    transform: scale(1.4);
+    width: 150px;
+    border-radius: 50%;
+}
+.weather-description p{
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-red);
+}
+
+/* Temperature et localisation */
+.bloc-info{
+    text-align: center;
+}
+.temperature{
+    font-size: 70px;
+    font-weight: bolder;
+    color: var(--color-crema);
+}
+.position{
+    font-size: 35px;
+    font-weight: 400;
+    word-break: break-all;
+    color: var(--color-crema);
+}
+.more {
+    margin-top: 20px;
+    color: var(--color-red);
+}
+.more p:nth-child(1){
+    font-size: 18px;
+}
+.more span{
+    font-weight: bold;
+}
+
+
+
+/* CONTENT */
+
+.tabs{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.tabs .label{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--color-red);
+}
+
+.tabs .data{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--color-purple);
+}
+
+.tabs i{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--color-orange);
+}
+
+.sun-infos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: none;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 30px 20px 20px;
+    background: #f3f3f3;
+    margin: 10px;
+    box-shadow: 
+        inset 5px 5px 5px var(--color-orange),
+        inset -5px -5px 5px rgba(255, 255, 255, 01);
+}
+.weather-details{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 30px 20px 20px;
+    background: #f3f3f3;
+    margin: 10px;
+    box-shadow: 
+        inset 5px 5px 5px var(--color-orange),
+        inset -5px -5px 5px rgba(255, 255, 255, 1);
+}
+
+/* DIVIDER */
+/* .weather-details:not(:last-child)::after{
+    content:"";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50px;
+    right: 0;
+    background: #d7d7d7;
+} */
+
+/* LOADER */
+.loader{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #f1f1f1;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  
+        visibility 0s 0.8s ease-out, 
+        opacity 0.4s 0.4s ease-out;
+}
+
+.fade-out{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--color-purple);
+    margin: 0 3px;
+    animation: load 0.3s infinite ease-out alternate;
+}
+.dot:nth-child(2){
+    animation-delay: 0.1s;
+}
+.dot:nth-child(3){
+    animation-delay: 0.2s;
+}
+
+@keyframes load {
+    to {
+        transform: translateY(10px)
+    }
+}

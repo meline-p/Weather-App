@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <h1 class="current-time"></h1>
+
+        <div class="weather-information">
+            <div class="weather-description">
+                <img class="weather-logo" src="" alt="Logo météo">
+                <p class="description"></p>
+            </div>
+            <div class="bloc-info">
+                <p class="temperature"></p>
+                <p class="position"><span class="city"></span>, <span class="country"></span></p>
+                <div class="more">
+                    <p><span class="temp-max"></span> / <span class="temp-min"></span></p>
+                    <p>Ressenti : <span class="feels-like"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-content">
+            <div class="tabs">
+
+                <div class="sun-infos">
+                    <div class="sunrise">
+                        <i class="fa-solid fa-sun"></i>
+                        <p class="label">Lever de soleil</p>
+                        <p class="data sunrise-data"></p>
+                    </div>
+                    <div class="sunset">
+                        <i class="fa-solid fa-moon"></i>
+                        <p class="label">Coucher de soleil</p>
+                        <p class="data sunset-data"></p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="pressure">
+                        <i class="fa-solid fa-arrow-down-wide-short"></i>
+                        <p class="label">Pression</p>
+                        <p class="data pressure-data"></p>
+                    </div>
+                    <div class="humidity">
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="label">Humidité</p>
+                        <p class="data humidity-data"></p>
+                    </div>
+                    <div class="wind">
+                        <i class="fa-solid fa-wind"></i>
+                        <p class="label">Vent</p>
+                        <p class="data wind-data"></p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
